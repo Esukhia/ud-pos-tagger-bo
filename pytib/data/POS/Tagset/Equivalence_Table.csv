@@ -1,0 +1,7 @@
+UD General,NOUN,PROPN,PRON,VERB,AUX,ADJ,ADV,ADP,DET,CCONJ,PART,NUM,INTJ,X,PUNCT,SYM
+UD – text,noun,proper noun,pronoun,verb,auxiliary,adjective,adverb,adposition,determiner,coordinating conjunction,particle,numeral,interjection,other,punctuation,symbol
+TIB-POS Class,M,M,M,J,J,G,N,T,T,T,T,A,B,K,N/A,N/A
+TIB-POS Class – text,མིང་ཚིག,མིང་ཚིག,མིང་ཚིག,བྱ་ཚིག,བྱ་ཚིག,རྒྱན་ཚིག,བསྣན་ཚིག,ཕྲད,ཕྲད,ཕྲད,ཕྲད,ཨང་གྲངས,འབོད་སྒྲ,སྐད་རིགས་གཞན,ཚེག་ཤད།,བརྡ་མཚོན་རྟགས་ཤད་གཞན།
+TIB-POS,MQ,MK,MC,JC,JR,GC,NC,TL,TE,TT,TX,AD,BD,KX,CX,DQ
+TIB-POS – text,སྤྱི་མིང,ཁྱད་མིང,ཚབ་ཚིག,བྱ་ཚིག,རོགས་པའི་བྱ་ཚིག,རྒྱན་ཚིག,བསྣན་ཚིག,ལ་དོན་ལ་སོགས,དེ་སྒྲ་ལ་སོགས,དང་སྒྲ་ལ་སོགས,ཕྲད་གཞན,ཨང་གྲངས,འབོད་སྒྲ,སྐད་རིགས་གཞན,ཚེག་ཤད།,བརྡ་མཚོན་རྟགས་ཤད་གཞན།
+Example,,,,"འགྲོ, བྱེད, བཟོ...",,"ཡོད, ཡིན, རེད...",,"ལ ལས ན ནས དུ -འིས -འི ཀྱི ཀྱིས གི གིས (ལ་དོན, འབྲེལ་སྒྲ, བྱེད་སྒྲ, འབྱུང་ཁུངས)","དེ, འདི, འདི་ཚོ, ཞིག/ཅིག, ཁ་ཤས, མང་པོ, ཚང་མ...","དང་, ཡང་, ཡིན་ན་ཡང, ཨ་ནི","མ/མི (དགག་ཚིག), -འམ/-འས (དྲི་ཚིག)...","༡, ༢, ༣, ༤, ༥, ༦, ༧, ༨, ༩, ༠, གཅིག, གཉིས, གསུམ...","ལགས/ལགས་སོ, ཡ་ཡ, རེད་རེད, ཨ...",,,
