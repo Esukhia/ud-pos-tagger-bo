@@ -4,6 +4,8 @@ from dependencies.pytib import Segment
 from dependencies.pytib.common import open_file, write_file
 import json
 
+this_dir = os.path.split(__file__)[0]
+
 def load_equivalence(Table, Monlam, SOAS):
     # parse Equivalence Table
     equivalence = open_file(Table).strip().split('\n')
@@ -43,9 +45,16 @@ def load_equivalence(Table, Monlam, SOAS):
                 soas_map[s_new_tag] = s_UD
     return structure, monlam_map, soas_map
 
+equivalence_path = os.path.join('data', 'Tagset', 'Equivalence_Table.csv')
+monlam_map_path = os.path.join('data', 'Tagset', 'Monlam to UD.csv')
+soas_map_path = os.path.join('data', 'Tagset', 'SOAS to UD.csv')
+monlam_pos_path = os.path.join('data', 'Monlam_POS.json')
+in_path = 'ནང་འཇུག'
+out_path = 'output'
+
 # load the data for the POS tagger
-equivalence_struct, monlam_map, soas_map = load_equivalence('data/Tagset/Equivalence_Table.csv', 'data/Tagset/Monlam to UD.csv', 'data/Tagset/SOAS to UD.csv')
-monlam_pos = json.loads(open_file('data/Monlam_POS.json'))
+equivalence_struct, monlam_map, soas_map = load_equivalence(equivalence_path, monlam_map_path, soas_map_path)
+monlam_pos = json.loads(open_file(monlam_pos_path))
 
 # load the pytib and the data we want
 nanhai_seg = Segment()
@@ -54,12 +63,10 @@ nanhai_seg.include_user_vocab(local_vocab=['ཐོགས་མེད་'])  # ad
 
 # POS Tagging
 print('Processing:')
-in_path = 'input'
-out_path = 'output'
 for f in os.listdir(in_path):
     print('\t'+f)
     f_name = f.replace('.txt', '')
-    to_tag_raw = open_file('{}/{}'.format(in_path, f)).strip()
+    to_tag_raw = open_file(os.path.join(in_path, f)).strip()
     to_tag_paragraphs = to_tag_raw.split('\n')
     pos_tagged = []
     par_tagged = []
@@ -89,4 +96,4 @@ for f in os.listdir(in_path):
     # generate the string to write
     output = '\n'.join([' '.join(a) for a in pos_tagged])
 
-    write_file('{}/{}_POS.txt'.format(out_path, f_name), output)
+    write_file(os.path.join(out_path, f_name+'_POS.txt'), output)
