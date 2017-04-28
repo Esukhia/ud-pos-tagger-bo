@@ -4,6 +4,8 @@
 
 It currently only uses [Monlam Dictionary](http://monlamit.com/content/monlam-grand-tibetan-dictionary)'s POS Tags converted into [UD Tags](http://universaldependencies.org/u/pos/) (a repo about the POS mappings coming soon!)
 
+See [its current output](output/to_tag_POS.txt).
+
 ## Installation and Usage:
 
 ##### Usage
