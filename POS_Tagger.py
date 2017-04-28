@@ -4,7 +4,15 @@ from dependencies.pytib import Segment
 from dependencies.pytib.common import open_file, write_file
 import json
 
-this_dir = os.path.split(__file__)[0]
+# all the paths used
+this_dir = os.path.split(__file__)[0]  # OS-specific absolute path to the current folder
+equivalence_path = os.path.join(this_dir, 'data', 'Tagset', 'Equivalence_Table.csv')
+monlam_map_path = os.path.join(this_dir, 'data', 'Tagset', 'Monlam to UD.csv')
+soas_map_path = os.path.join(this_dir, 'data', 'Tagset', 'SOAS to UD.csv')
+monlam_pos_path = os.path.join(this_dir, 'data', 'Monlam_POS.json')
+in_path = os.path.join(this_dir, 'ནང་འཇུག')
+out_path = os.path.join(this_dir, 'output')
+
 
 def load_equivalence(Table, Monlam, SOAS):
     # parse Equivalence Table
@@ -45,12 +53,6 @@ def load_equivalence(Table, Monlam, SOAS):
                 soas_map[s_new_tag] = s_UD
     return structure, monlam_map, soas_map
 
-equivalence_path = os.path.join('data', 'Tagset', 'Equivalence_Table.csv')
-monlam_map_path = os.path.join('data', 'Tagset', 'Monlam to UD.csv')
-soas_map_path = os.path.join('data', 'Tagset', 'SOAS to UD.csv')
-monlam_pos_path = os.path.join('data', 'Monlam_POS.json')
-in_path = 'ནང་འཇུག'
-out_path = 'output'
 
 # load the data for the POS tagger
 equivalence_struct, monlam_map, soas_map = load_equivalence(equivalence_path, monlam_map_path, soas_map_path)
