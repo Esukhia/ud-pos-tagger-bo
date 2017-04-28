@@ -54,7 +54,7 @@ equivalence_struct, monlam_map, soas_map = load_equivalence('../pytib/data/POS/T
 monlam_pos = jp.decode(open_file('../pytib/data/POS/output/Monlam_POS.json'))
 
 tsikchen_seg = Segment()
-# tsikchen_seg.include_user_vocab(['tsikchen'])
+tsikchen_seg.include_user_vocab(['Nanhai_clean'])
 
 to_tag_raw = open_file('to_tag.txt').strip()
 to_tag_paragraphs = to_tag_raw.split('\n')
