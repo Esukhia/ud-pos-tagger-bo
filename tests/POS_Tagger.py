@@ -55,6 +55,7 @@ monlam_pos = jp.decode(open_file('../pytib/data/POS/output/Monlam_POS.json'))
 
 nanhai_seg = Segment()
 nanhai_seg.include_user_vocab(['Nanhai_clean'])
+nanhai_seg.include_user_vocab(local_vocab=['ཐོགས་མེད་'])  # add custom words missing in the vocabs
 
 to_tag_raw = open_file('to_tag.txt').strip()
 to_tag_paragraphs = to_tag_raw.split('\n')
