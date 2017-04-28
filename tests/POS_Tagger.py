@@ -53,8 +53,8 @@ equivalence_struct, monlam_map, soas_map = load_equivalence('../pytib/data/POS/T
 
 monlam_pos = jp.decode(open_file('../pytib/data/POS/output/Monlam_POS.json'))
 
-tsikchen_seg = Segment()
-tsikchen_seg.include_user_vocab(['Nanhai_clean'])
+nanhai_seg = Segment()
+nanhai_seg.include_user_vocab(['Nanhai_clean'])
 
 to_tag_raw = open_file('to_tag.txt').strip()
 to_tag_paragraphs = to_tag_raw.split('\n')
@@ -64,7 +64,7 @@ for par in to_tag_paragraphs:
     if par_tagged != []:
         pos_tagged.append(par_tagged)
         par_tagged = []
-    segmented = Segment().segment(par, reinsert_aa=True, distinguish_ra_sa=True, unknown=0)
+    segmented = nanhai_seg.segment(par, reinsert_aa=True, distinguish_ra_sa=True, unknown=0)
     print(segmented)
     words = segmented.split(' ')
     for word in words:
