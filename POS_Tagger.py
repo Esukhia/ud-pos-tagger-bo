@@ -1,9 +1,8 @@
 import re
 import os
-from dependencies.segmentor import Segment
-from dependencies.segmentor.common import open_file, write_file
-import jsonpickle as jp
-jp.set_encoder_options('simplejson', sort_keys=True, indent=4, ensure_ascii=False)
+from dependencies.pytib import Segment
+from dependencies.pytib.common import open_file, write_file
+import json
 
 def load_equivalence(Table, Monlam, SOAS):
     # parse Equivalence Table
@@ -46,9 +45,9 @@ def load_equivalence(Table, Monlam, SOAS):
 
 # load the data for the POS tagger
 equivalence_struct, monlam_map, soas_map = load_equivalence('data/Tagset/Equivalence_Table.csv', 'data/Tagset/Monlam to UD.csv', 'data/Tagset/SOAS to UD.csv')
-monlam_pos = jp.decode(open_file('data/Monlam_POS.json'))
+monlam_pos = json.loads(open_file('data/Monlam_POS.json'))
 
-# load the segmentor and the data we want
+# load the pytib and the data we want
 nanhai_seg = Segment()
 nanhai_seg.include_user_vocab(['Nanhai_clean'])
 nanhai_seg.include_user_vocab(local_vocab=['ཐོགས་མེད་'])  # add custom words missing in the vocabs
