@@ -1,4 +1,4 @@
-# MMPOSTagger
+# Universal Dependencies Part-of-Speech Tagger for Tibetan
 
 ## A basic POS Tagger for Tibetan.
 
@@ -22,4 +22,4 @@ Note: It has been copied in `dependencies` to allow to run the project after dow
  - implement the SOAS POS Tags(from [Tibetan in Digital Communication](https://www.soas.ac.uk/cia/tibetanstudies/tibetan-in-digital-communications/) project) and use them as a first choice (falling back on Monlam where there is no POS)
 
 
-Copyright [Buddhist Digital Resource Center](https://www.tbrc.org/), 2017, MIT License
+Copyright [Buddhist Digital Resource Center](https://www.tbrc.org/), 2017, [MIT License](https://opensource.org/licenses/MIT)
